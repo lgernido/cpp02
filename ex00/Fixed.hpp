@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 12:48:39 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/12 13:47:02 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/13 15:01:44 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ class Fixed
     public :
         Fixed();
         ~Fixed();
+        Fixed(const Fixed& aFixed);
+        Fixed& operator=(const Fixed& aFixed);
         int getRawBits(void)const;
         void setRawBits(int const raw);
 
