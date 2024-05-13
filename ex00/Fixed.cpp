@@ -6,13 +6,11 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 12:48:38 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/13 16:20:10 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:19:10 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-const int Fixed::bits = 8;
 
 /*CONSTRUCTORS AND DESTRUCTORS*/
 
@@ -20,9 +18,9 @@ const int Fixed::bits = 8;
 
 Fixed::Fixed()
 {
-    std::cout << BOLD << "Default" << RESET << " constructor called" << \
+    std::cout << BOLD << "Default constructor" << RESET << " called" << \
     std::endl;
-    this->number = 0;
+    number = 0;
 }
 
 //Default destructor
@@ -39,19 +37,16 @@ Fixed::Fixed(const Fixed& aFixed)
 {
     std::cout << BOLD << "Copy" << RESET << " constructor called" << \
     std::endl;
-    this->number = aFixed.number;
+    this->number = aFixed.getRawBits();
 }
 
-//Copy assigneent operator
+//Copy assignement operator
 
 Fixed& Fixed::operator=(const Fixed& aFixed)
 {
     std::cout << BOLD << "Copy assignement operator" << RESET << " called" << \
     std::endl;
-    if (this != &aFixed)
-    {
-        this->number = aFixed.number;
-    }
+    this->number = aFixed.getRawBits(); 
     return (*this);
 }
 

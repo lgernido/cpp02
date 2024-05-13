@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 12:48:39 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/13 16:18:32 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/13 17:18:03 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ class Fixed
 
     private : 
         int number;
-        static const int bits;
+        static const int bits = 8;
 };
