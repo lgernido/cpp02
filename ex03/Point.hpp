@@ -6,9 +6,12 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:24:40 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/15 13:58:14 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:10:17 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef POINT_HPP
+#define POINT_HPP
 
 #include "Fixed.hpp"
 #include <iostream>
@@ -34,3 +37,5 @@ class Point
 };
 
 bool bsp( Point const a, Point const b, Point const c, Point const point);
+
+#endif

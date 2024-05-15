@@ -6,9 +6,12 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 12:48:39 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/14 12:46:45 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:09:02 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
 #include <cmath>
@@ -49,3 +52,5 @@ class Fixed
 };
 
 std::ostream& operator<<(std::ostream& os, const Fixed& aFixed);
+
+#endif

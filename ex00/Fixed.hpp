@@ -6,9 +6,12 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 12:48:39 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/13 17:18:03 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:08:36 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include <iostream>
 
@@ -39,3 +42,5 @@ class Fixed
         int number;
         static const int bits = 8;
 };
+
+#endif

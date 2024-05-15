@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 12:48:38 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/15 14:29:59 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:13:55 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ float Fixed::toFloat(void)const
 
 int Fixed::toInt(void)const
 {
-    return (this->number / static_cast<int>(pow(2, this->bits)));
+    return number >> bits;
 }
 
 /*OPERATOR OVERLOADING*/
