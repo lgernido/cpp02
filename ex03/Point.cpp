@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:23:51 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/15 13:58:10 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/15 14:02:15 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,21 @@
 
 Point::Point() : x(0), y(0)
 {
-    // this->x = 0;
-    // this->y = 0;
 }
 
 //Default destructor
 Point::~Point()
 {
-    
 }
 
 //Copy constructor
 Point::Point(const Point& aPoint) : x(aPoint.getX()), y(aPoint.getY())
 {
-    // this->x = aPoint.getX();
-    // this->y = aPoint.getY();
 }
 
 //Other constructor
 Point::Point(const float x, const float y) : x(x), y(y)
 {
-    // this->setX(x);
-    // this->setY(y);
 }
 
 /*OPERATOR OVERLOAD*/

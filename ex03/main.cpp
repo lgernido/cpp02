@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:23:26 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/15 12:35:46 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/15 14:22:26 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int main(void)
         Point c(10.145, 6.8);
         Point p(6, 6);
         if (bsp(a, b, c, p) == true)
-            std::cout << "INSIDE" << std::endl;
+            std::cout << GREEN << BOLD << "INSIDE" << RESET << std::endl;
         else
-            std::cout << "OUTSIDE" << std::endl;
+            std::cout << RED << BOLD << "OUTSIDE" << RESET << std::endl;
     }
     {
         Point a(5.4, 7);
@@ -30,9 +30,9 @@ int main(void)
         Point c(10.145, 6.8);
         Point p(-2, -14.36);
         if (bsp(a, b, c, p) == true)
-            std::cout << "INSIDE" << std::endl;
+            std::cout << GREEN  << BOLD << "INSIDE" << RESET << std::endl;
         else
-            std::cout << "OUTSIDE" << std::endl; 
+            std::cout << RED << BOLD << "OUTSIDE" << RESET << std::endl; 
     }
     {
         Point a(5.4, -2.52);
@@ -40,8 +40,8 @@ int main(void)
         Point c(0.123, 3.69);
         Point p(6, 6);
         if (bsp(a, b, c, p) == true)
-            std::cout << "INSIDE" << std::endl;
+            std::cout << GREEN << BOLD << "INSIDE" << RESET << std::endl;
         else
-            std::cout << "OUTSIDE" << std::endl;
+            std::cout << RED << BOLD << "OUTSIDE" << RESET << std::endl;
     }
 }

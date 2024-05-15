@@ -38,7 +38,7 @@ RESET	=	\033[0m
 
 $(NAME): $(OBJ_FILES) $(INCLUDES)
 	@$(CC) $(CFLAGS) $(OBJ_FILES) -o $(NAME)
-	@echo "$(MAGENTA)The modified files are: $?$(RESET)"
+	@echo "$(MAGENTA)The modified: $?$(RESET)"
 	@echo "$(GREEN)Compilation success!$(RESET)"
 
 build/%.o: %.cpp
