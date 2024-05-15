@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 12:48:39 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/15 08:57:58 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/15 09:41:43 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ class Fixed
         Fixed operator/(const Fixed& aFixed)const;
         Fixed& operator++(void);
         Fixed& operator--(void);
-        Fixed operator++(int aFixed);
-        Fixed operator--(int aFixed);
+        Fixed operator++(int);
+        Fixed operator--(int);
 
-        bool operator>(const Fixed& aFixed);
-        bool operator<(const Fixed& aFixed);
+        bool operator>(const Fixed& aFixed) const;
+        bool operator<(const Fixed& aFixed) const;
         bool operator>=(const Fixed& aFixed);
         bool operator<=(const Fixed& aFixed);
         bool operator==(const Fixed& aFixed);
@@ -59,10 +59,10 @@ class Fixed
         float toFloat(void)const;
         int toInt(void)const;
 
-        static Fixed min(Fixed a, Fixed b);
         static Fixed min(Fixed& a, Fixed& b);
-        static Fixed max(Fixed a, Fixed b);
-        static Fixed max(Fixed& a, Fixed &b);
+        static Fixed min(const Fixed& a, const Fixed& b);
+        static Fixed max(Fixed& a, Fixed& b);
+        static Fixed max(const Fixed& a, const Fixed &b);
 
 
     private : 
