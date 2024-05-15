@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 12:48:39 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/14 16:17:13 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/15 08:57:58 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ class Fixed
         Fixed(const Fixed& aFixed);
         
         Fixed& operator=(const Fixed& aFixed);
-        Fixed operator+(const Fixed& aFixed);
-        Fixed operator-(const Fixed& aFixed);
-        Fixed operator*(const Fixed& aFixed);
-        Fixed operator/(const Fixed& aFixed);
+        Fixed operator+(const Fixed& aFixed)const;
+        Fixed operator-(const Fixed& aFixed)const;
+        Fixed operator*(const Fixed& aFixed)const;
+        Fixed operator/(const Fixed& aFixed)const;
         Fixed& operator++(void);
         Fixed& operator--(void);
         Fixed operator++(int aFixed);

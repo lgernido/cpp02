@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 12:48:38 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/14 16:21:29 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/15 08:57:45 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@
 
 Fixed::Fixed()
 {
-    std::cout << BOLD << "Default constructor" << RESET << " called" << \
-    std::endl;
+    // std::cout << BOLD << "Default constructor" << RESET << " called" << \
+    // std::endl;
     number = 0;
 }
 
 Fixed::Fixed(const int number)
 {
-    std::cout << "Int constructor called" << std::endl;
+    // std::cout << "Int constructor called" << std::endl;
     this->number = number * static_cast<int>(pow(2, this->bits));
 }
 
 Fixed::Fixed(const float number)
 {
-    std::cout << "Float contructer called" << std::endl;
+    // std::cout << "Float constructer called" << std::endl;
     this->number = roundf(number * pow(2, this->bits));
 }
 
@@ -39,16 +39,16 @@ Fixed::Fixed(const float number)
 
 Fixed::~Fixed()
 {
-    std::cout << BOLD << "Destructor" << RESET << " called" << \
-    std::endl;
+    // std::cout << BOLD << "Destructor" << RESET << " called" << \
+    // std::endl;
 }
 
 //Copy constructor
 
 Fixed::Fixed(const Fixed& aFixed)
 {
-    std::cout << BOLD << "Copy" << RESET << " constructor called" << \
-    std::endl;
+    // std::cout << BOLD << "Copy" << RESET << " constructor called" << \
+    // std::endl;
     this->number = aFixed.getRawBits();
 }
 
@@ -57,15 +57,15 @@ Fixed::Fixed(const Fixed& aFixed)
 
 int Fixed::getRawBits(void)const
 {
-    std::cout << BOLD << "getRawBits" << RESET << " member function called" << \
-    std::endl;
+    // std::cout << BOLD << "getRawBits" << RESET << " member function called" << \
+    // std::endl;
     return(this->number);
 }
 
 void Fixed::setRawBits(int const raw)
 {
-    std::cout << BOLD << "setRawBits" << RESET << " member function called" << \
-    std::endl; 
+    // std::cout << BOLD << "setRawBits" << RESET << " member function called" << \
+    // std::endl; 
     this->number = raw; 
 }
 
@@ -91,55 +91,63 @@ std::ostream& operator<<(std::ostream& os, const Fixed& aFixed)
 
 Fixed& Fixed::operator=(const Fixed& aFixed)
 {
-    std::cout << BOLD << "Copy assignement operator" << RESET << " called" << \
-    std::endl;
+    // std::cout << BOLD << "Copy assignement operator" << RESET << " called" << \
+    // std::endl;
     this->number = aFixed.getRawBits(); 
     return (*this);
 }
 
-Fixed Fixed::operator+(const Fixed& aFixed)
+Fixed Fixed::operator+(const Fixed& aFixed) const
 {
-    return (this->number += aFixed.getRawBits());
+    Fixed result;
+    result.setRawBits(this->getRawBits() + aFixed.getRawBits());
+    return result;
 }
 
-Fixed Fixed::operator-(const Fixed& aFixed)
+Fixed Fixed::operator-(const Fixed& aFixed) const
 {
-    return(this->number -= aFixed.getRawBits());
+    Fixed result;
+    result.setRawBits(this->getRawBits() - aFixed.getRawBits());
+    return result;
 }
 
-Fixed Fixed::operator*(const Fixed& aFixed)
+Fixed Fixed::operator*(const Fixed& aFixed) const
 {
-    return(this->number *= aFixed.getRawBits());
+    Fixed result;
+    result.setRawBits((this->getRawBits() * aFixed.getRawBits()) >> bits);
+    return result;
 }
 
-Fixed Fixed::operator/(const Fixed& aFixed)
+Fixed Fixed::operator/(const Fixed& aFixed) const
 {
-    return(this->number /= aFixed.getRawBits());
+    Fixed result;
+    result.setRawBits((this->getRawBits() << bits) / aFixed.getRawBits());
+    return result;
 }
 
 Fixed& Fixed::operator++(void)
 {
-    this->number+=1;
-    return (this);
+    this->number += 1;
+    return (*this);
 }
 
 Fixed& Fixed::operator--(void)
 {
-    this->number-=1;
-    return(this);
+    this->number -= 1;
+    return (*this);
 }
 
-Fixed Fixed::operator++(int aFixed)
+Fixed Fixed::operator++(int)
 {
-    Fixed tmp(aFixed);
-    ++this->number;
+    Fixed tmp(*this);
+    this->number += 1;
     return(tmp);
 }
 
-Fixed Fixed::operator--(int aFixed)
+Fixed Fixed::operator--(int)
 {
-    Fixed tmp(aFixed);
-    --this->number;
+    Fixed tmp(*this);
+    this->number -= 1;
     return(tmp);
 }
 
@@ -217,7 +225,7 @@ bool Fixed::operator!=(const Fixed& aFixed)
 
 /*STATIC FUNCTIONS*/
 
-static Fixed Fixed::min(Fixed a, Fixed b)
+Fixed Fixed::min(Fixed a, Fixed b)
 {
     if (a < b)
     {
@@ -229,7 +237,7 @@ static Fixed Fixed::min(Fixed a, Fixed b)
     }
 }
 
-static Fixed Fixed::min(Fixed& a, Fixed& b)
+Fixed Fixed::min(Fixed& a, Fixed& b)
 {
     if (a < b)
     {
@@ -242,7 +250,7 @@ static Fixed Fixed::min(Fixed& a, Fixed& b)
     
 }
 
-static Fixed Fixed::max(Fixed a, Fixed b)
+Fixed Fixed::max(Fixed a, Fixed b)
 {
     if (a > b)
     {
@@ -254,7 +262,7 @@ static Fixed Fixed::max(Fixed a, Fixed b)
     }
 }
 
-static Fixed Fixed::max(Fixed&a, Fixed& b)
+Fixed Fixed::max(Fixed&a, Fixed& b)
 {
     if (a > b)
     {
