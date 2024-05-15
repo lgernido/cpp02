@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 12:48:38 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/14 12:37:52 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/15 14:29:59 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,8 @@ Fixed& Fixed::operator=(const Fixed& aFixed)
 
 int Fixed::getRawBits(void)const
 {
-    std::cout << BOLD << "getRawBits" << RESET << " member function called" << \
-    std::endl;
+    // std::cout << BOLD << "getRawBits" << RESET << " member function called" << \
+    // std::endl;
     return(this->number);
 }
 

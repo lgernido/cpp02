@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 12:48:36 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/14 12:46:18 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/15 10:42:34 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main( void )
     Fixed const b(10);
     Fixed const c(42.42f);
     Fixed const d(b);
-    a = Fixed( 1234.4321f );
+    a = Fixed(1234.4321f);
     
     std::cout << "a is " << a << std::endl;
     std::cout << "b is " << b << std::endl;
