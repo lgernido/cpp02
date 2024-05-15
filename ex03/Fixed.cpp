@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 12:48:38 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/15 13:44:43 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:36:24 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ Fixed::Fixed()
 Fixed::Fixed(const int number)
 {
     // std::cout << "Int constructor called" << std::endl;
-    this->number = number * static_cast<int>(pow(2, this->bits));
+    this->number = number << bits;
 }
 
 Fixed::Fixed(const float number)
 {
     // std::cout << "Float constructer called" << std::endl;
-    this->number = roundf(number * pow(2, this->bits));
+    this->number = (int)(number * (1 << bits));
 }
 
 //Default destructor
@@ -71,7 +71,7 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void)const
 {
-    return (this->number / pow(2, this->bits));
+    return (float)(this->number) / (1 << this->bits);
 }
 
 int Fixed::toInt(void)const

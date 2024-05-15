@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/12 12:48:38 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/15 16:13:55 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:32:52 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void Fixed::setRawBits(int const raw)
 
 float Fixed::toFloat(void)const
 {
-    return (this->number / pow(2, this->bits));
+    return (float)(this->number) / (1 << this->bits);
 }
 
 int Fixed::toInt(void)const
