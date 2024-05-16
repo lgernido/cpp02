@@ -6,7 +6,7 @@
 /*   By: lgernido <lgernido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:38:44 by lgernido          #+#    #+#             */
-/*   Updated: 2024/05/15 14:41:42 by lgernido         ###   ########.fr       */
+/*   Updated: 2024/05/16 08:48:29 by lgernido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ bool bsp(Point const a, Point const b, Point const c, Point const point)
     float by = b.getY();
     float cx = c.getX();
     float cy = c.getY();
-    float x = point.getX();
-    float y = point.getY();
+    float px = point.getX();
+    float py = point.getY();
 
-    if ((x == ax && y == ay) || (x == bx && y == by) || (x == cx && y == cy))
+    if ((px == ax && py == ay) || (px == bx && py == by) || (px == cx && py == cy))
         return false;
 
-    float triangleABP = ((ax - x) * (by - y) - (ay - y) * (bx - x));
-    float triangleBCP = ((bx - x) * (cy - y) - (by - y) * (cx - x));
-    float triangleCAP = ((cx - x) * (ay - y) - (cy - y) * (ax - x));
+    float triangleABP = ((ax - px) * (by - py) - (ay - py) * (bx - px));
+    float triangleBCP = ((bx - px) * (cy - py) - (by - py) * (cx - px));
+    float triangleCAP = ((cx - px) * (ay - py) - (cy - py) * (ax - px));
 
     if (triangleABP == 0 || triangleBCP == 0 || triangleCAP == 0)
         return false;
